@@ -12,4 +12,6 @@ export const App = () => {
       <ContactList />
     </div>
   );
+
 };
+
