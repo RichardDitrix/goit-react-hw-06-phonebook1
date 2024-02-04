@@ -14,8 +14,9 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const onChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
+   //  const name = event.target.name;
+   //  const value = event.target.value;
+	const {name, value} = event.target;
 
     switch (name) {
       case 'name':
@@ -32,14 +33,23 @@ const ContactForm = () => {
   const onSubmit = event => {
     event.preventDefault();
 
-    if (
-      contacts.find(
-        contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
-      )
-    ) {
-      Notify.failure(`${name} is already in contacts`);
-      return;
-    }
+   //  if (
+   //    contacts.find(
+   //      contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+   //    )
+   //  ) {
+   //    Notify.failure(`${name} is already in contacts`);
+   //    return;
+   //  }
+
+	const isContactExist = contacts.find (
+		contact => contact.name.toLowwerCase() == name.toLowwerCase ()
+	);
+		if (isContactExist) {
+			Notify.failure(`${name} is already in contacts`);
+			return;
+		}
+
 
     dispatch(addContact({ name, number }));
 

@@ -7,12 +7,14 @@ import { Info, Item } from './ContactItem.styled';
 const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
+  const handleContactDelete = () => dispatch (deleteContact(id));
+
   return (
     <Item>
       <Info>
         {name}: {number}
       </Info>
-      <button type="button" onClick={() => dispatch(deleteContact(id))}>
+      <button type="button" onClick={handleContactDelete}>
         Delete
       </button>
     </Item>

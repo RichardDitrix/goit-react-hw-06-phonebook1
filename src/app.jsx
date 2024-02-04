@@ -1,17 +1,20 @@
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
+import React from 'react';
 
 export const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
       <ContactList />
-    </div>
+    </React.Fragment>
   );
 
 };
+
+
 
